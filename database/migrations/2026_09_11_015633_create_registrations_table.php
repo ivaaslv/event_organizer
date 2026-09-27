@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
-            $table->foreign_id('event_id')->constrained()->OnDelete('Cascade');
+            $table->foreignId('event_id')->constrained()->OnDelete('Cascade');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->string('institution')->nullable();
             $table->string('registration_code')->unique();
-            $table->enmum('status', ['pending', 'confirmed', 'cancelled'])->default('confirmed');
+            $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('confirmed');
             $table->timestamps();
         });
     }

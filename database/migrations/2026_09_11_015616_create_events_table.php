@@ -23,7 +23,7 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->integer('quota');
             $table->string('banner_image')->nullable();
-            $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('published');
+            $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }
