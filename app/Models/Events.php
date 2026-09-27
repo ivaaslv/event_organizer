@@ -20,6 +20,11 @@ class Events extends Model
         'status'
     ];
 
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
+
     public function category() {
         return $this->belongsTo(Categories::class, 'category_id', 'id'); // category_id = foreign key, 'id' = primary key
     }
