@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Registrations extends Model
+class Registration extends Model
 {
     protected $fillable = [
         'event_id',

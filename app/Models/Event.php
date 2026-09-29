@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Events extends Model
+class Event extends Model
 {
     protected $fillable = [
         'category_id',
@@ -26,10 +26,10 @@ class Events extends Model
     ];
 
     public function category() {
-        return $this->belongsTo(Categories::class, 'category_id', 'id'); // category_id = foreign key, 'id' = primary key
+        return $this->belongsTo(Category::class, 'category_id', 'id'); // category_id = foreign key, 'id' = primary key
     }
 
     public function registrations() {
-        return $this->hasMany(Registrations::class, 'event_id', 'id');
+        return $this->hasMany(Registration::class, 'event_id', 'id');
     }
 }
